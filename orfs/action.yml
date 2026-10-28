@@ -65,14 +65,15 @@ runs:
         sudo apt-get update -y
         sudo apt-get install -y ./openroad_2.0_amd64-ubuntu24.04-40811f37.deb
         echo "OPENROAD_EXE=$(command -v openroad)" >> $GITHUB_ENV
-
+        
     - name: Install KLayout
       shell: bash
       run: |
-        wget https://www.klayout.org/downloads/Ubuntu-24/klayout_0.29.7-1_amd64.deb
-        sudo apt-get install -y ./klayout_0.29.7-1_amd64.deb
+        sudo apt-get update
+        sudo apt-get install -y klayout
         pip install klayout==0.29.7
-
+        klayout -v
+        
     - name: 'Install yosys (oss-cad-suite)'
       shell: bash
       run: |
