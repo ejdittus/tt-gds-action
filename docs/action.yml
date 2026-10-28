@@ -44,6 +44,15 @@ runs:
       shell: bash
       run: ./tt/tt_tool.py --check-docs
 
+    - name: Install Typst
+      shell: bash
+      run: |
+        wget -qO typst.tar.xz https://github.com/typst/typst/releases/download/v0.13.1/typst-x86_64-unknown-linux-musl.tar.xz
+        mkdir -p typst-install
+        tar -xJf typst.tar.xz -C typst-install
+        sudo install typst-install/typst-x86_64-unknown-linux-musl/typst /usr/local/bin/typst
+        typst --version
+
     - name: Create PDF
       shell: bash
       run: ./tt/tt_tool.py --create-pdf
