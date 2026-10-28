@@ -71,7 +71,7 @@ runs:
       run: |
         sudo apt-get update
         sudo apt-get install -y klayout
-        pip install klayout==0.29.7
+        pip install klayout==0.29.12
         klayout -v
         
     - name: 'Install yosys (oss-cad-suite)'
