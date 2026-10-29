@@ -97,7 +97,7 @@ runs:
       uses: actions/checkout@v4
       with:
         repository: TinyTapeout/IHP-Open-PDK
-        ref: tt
+        ref: tt-ihp-0p2
         path: ${{ env.IHP_PDK_ROOT }}
 
     - name: Update ORFS platform files from IHP PDK
